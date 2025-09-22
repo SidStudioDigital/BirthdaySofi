@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-content="partyInfo.title">¡Fiesta de Cumpleaños de Sofia! 🎉</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes balloon-float {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 157, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 107, 157, 0.6); }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confetti-fall 3s linear infinite;
+        }
+        
+        .balloon-float {
+            animation: balloon-float 3s ease-in-out infinite;
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+    </style>
+<!-- <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fkidsparty1681back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script> -->
+</head>
+<body class="bg-gradient-to-br from-primary-50 via-accent-50 to-secondary-50 font-inter">
+    <!-- Floating Confetti Animation -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-10">
+        <div class="confetti bg-primary rounded-full" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="confetti bg-accent rounded-full" style="left: 20%; animation-delay: 0.5s;"></div>
+        <div class="confetti bg-secondary rounded-full" style="left: 30%; animation-delay: 1s;"></div>
+        <div class="confetti bg-primary rounded-full" style="left: 40%; animation-delay: 1.5s;"></div>
+        <div class="confetti bg-accent rounded-full" style="left: 50%; animation-delay: 2s;"></div>
+        <div class="confetti bg-secondary rounded-full" style="left: 60%; animation-delay: 2.5s;"></div>
+        <div class="confetti bg-primary rounded-full" style="left: 70%; animation-delay: 3s;"></div>
+        <div class="confetti bg-accent rounded-full" style="left: 80%; animation-delay: 3.5s;"></div>
+        <div class="confetti bg-secondary rounded-full" style="left: 90%; animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center px-4 py-8 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="party-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="10" cy="10" r="2" fill="#FF6B9D"/>
+                        <rect x="5" y="5" width="10" height="10" fill="none" stroke="#4ECDC4" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#party-pattern)"/>
+            </svg>
+        </div>
+
+        <!-- Floating Balloons -->
+        <div id="floating-balloons" class="absolute inset-0">
+            <!-- Balloons will be dynamically inserted here -->
+        </div>
+
+        <div class="relative z-20 text-center max-w-4xl mx-auto">
+            <!-- Birthday Child's Name -->
+            <h1 class="font-dancing text-6xl md:text-8xl text-primary mb-4 animate-bounce-custom" data-content="partyInfo.title">
+                ¡Sofia cumple 7 años! 🎂
+            </h1>
+            
+            <!-- Party Details -->
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-modal mb-8">
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-nunito font-bold text-lg text-text-primary">Fecha</h3>
+                        <p class="text-text-secondary" data-content="partyInfo.date">Sábado, 28 Septiembre 2025</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-nunito font-bold text-lg text-text-primary">Hora</h3>
+                        <p class="text-text-secondary" data-content="partyInfo.time">15:00 - 18:00</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-3">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-nunito font-bold text-lg text-text-primary">Lugar</h3>
+                        <p class="text-text-secondary">
+                            <span data-content="partyInfo.location.name">Parque Central</span><br />
+                            <span data-content="partyInfo.location.address">Calle Mayor 123, Madrid</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primary CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button onclick="scrollToRSVP()" class="btn-primary text-xl px-8 py-4 pulse-glow" data-content="buttons.confirmAttendance">
+                    🎉 Confirmar Asistencia
+                </button>
+                <button onclick="toggleDetails()" class="bg-white text-primary border-2 border-primary font-nunito font-bold py-4 px-8 rounded-lg hover:bg-primary hover:text-white transition-all duration-250" data-content="buttons.viewDetails">
+                    📋 Ver Detalles
+                </button>
+            </div>
+
+            <!-- Expandable Party Details -->
+            <div id="party-details" class="hidden bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-card">
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div>
+                        <h4 class="font-nunito font-bold text-lg text-primary mb-3">🎪 Tema de la Fiesta</h4>
+                        <p class="text-text-secondary mb-4" data-content="partyInfo.theme">Princesas y Unicornios - ¡Ven disfrazado!</p>
+                        
+                        <h4 class="font-nunito font-bold text-lg text-primary mb-3" data-content="partyDetails.food.title">🍰 Comida y Bebidas</h4>
+                        <p class="text-text-secondary" data-content="partyDetails.food.description">Tarta de cumpleaños, bocadillos, zumos naturales y snacks saludables</p>
+                    </div>
+                    <div>
+                        <h4 class="font-nunito font-bold text-lg text-primary mb-3" data-content="partyDetails.activities.title">🎮 Actividades</h4>
+                        <ul class="text-text-secondary space-y-2" id="activity-list">
+                            <!-- Activities will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section id="countdown" class="py-16 px-4 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-dancing text-4xl md:text-6xl text-white mb-8" data-content="sections.countdown.title">¡Faltan solo...</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+                    <div id="days" class="text-4xl md:text-6xl font-nunito font-bold text-white">13</div>
+                    <div class="text-white/80 font-medium" data-content="sections.countdown.labels.days">Días</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+                    <div id="hours" class="text-4xl md:text-6xl font-nunito font-bold text-white">05</div>
+                    <div class="text-white/80 font-medium" data-content="sections.countdown.labels.hours">Horas</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+                    <div id="minutes" class="text-4xl md:text-6xl font-nunito font-bold text-white">42</div>
+                    <div class="text-white/80 font-medium" data-content="sections.countdown.labels.minutes">Minutos</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+                    <div id="seconds" class="text-4xl md:text-6xl font-nunito font-bold text-white">18</div>
+                    <div class="text-white/80 font-medium" data-content="sections.countdown.labels.seconds">Segundos</div>
+                </div>
+            </div>
+            <p class="text-white/90 text-lg" data-content="sections.countdown.subtitle">¡Hasta la fiesta más divertida del año! 🎊</p>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-dancing text-4xl md:text-5xl text-center text-primary mb-12" data-content="sections.gallery.title">Galería de Sofia 📸</h2>
+            
+            <div class="relative overflow-hidden rounded-2xl shadow-modal">
+                <div id="gallery-container" class="flex transition-transform duration-500 ease-out">
+                    <!-- Gallery items will be dynamically inserted here -->
+                </div>
+                
+                <!-- Gallery Navigation -->
+                <button onclick="previousPhoto()" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button onclick="nextPhoto()" class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                
+                <!-- Gallery Dots -->
+                <div id="gallery-dots" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <!-- Dots will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Counter -->
+    <section id="social-proof" class="py-16 px-4 bg-gradient-to-r from-secondary-50 to-primary-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-dancing text-4xl md:text-5xl text-primary mb-8" data-content="sections.socialProof.title">¡Mira quién viene! 👥</h2>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-card mb-8">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="text-6xl font-nunito font-bold text-primary" id="confirmed-count">12</div>
+                    <div class="ml-4 text-left">
+                        <div class="text-xl font-nunito font-bold text-text-primary" data-content="sections.socialProof.confirmedText">amigos</div>
+                        <div class="text-text-secondary" data-content="sections.socialProof.subtitle">ya confirmaron</div>
+                    </div>
+                </div>
+                
+                <!-- Confirmed Guests Avatars -->
+                <div class="flex flex-wrap justify-center gap-2 mb-6">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">M</div>
+                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold">A</div>
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">L</div>
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">C</div>
+                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold">P</div>
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">J</div>
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">S</div>
+                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold">D</div>
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">+4</div>
+                </div>
+                
+                <p class="text-text-secondary" data-content="sections.socialProof.callToAction">¡No te quedes fuera de la diversión!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section id="location" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-dancing text-4xl md:text-5xl text-center text-primary mb-12" data-content="sections.location.title">¿Dónde es la fiesta? 📍</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Map Placeholder -->
+                <div class="bg-gray-200 rounded-2xl h-96 flex items-center justify-center shadow-card">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <p class="text-text-primary font-medium" data-content="sections.location.mapLabel">Mapa Interactivo</p>
+                        <p class="text-text-secondary text-sm" data-content="partyInfo.location.address">Parque Central, Madrid</p>
+                    </div>
+                </div>
+                
+                <!-- Location Details -->
+                <div class="space-y-6">
+                    <div class="bg-surface rounded-xl p-6">
+                        <h3 class="font-nunito font-bold text-lg text-primary mb-4" data-content="sections.location.addressTitle">📍 Dirección Completa</h3>
+                        <p class="text-text-primary mb-2" data-content="partyInfo.location.name">Parque Central</p>
+                        <p class="text-text-secondary mb-4" data-content="partyInfo.location.fullAddress">Calle Mayor 123, 28013 Madrid</p>
+                        <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors" data-content="buttons.openMaps">
+                            🗺️ Abrir en Google Maps
+                        </button>
+                    </div>
+                    
+                    <!-- Expandable Sections -->
+                    <div class="space-y-4">
+                        <button onclick="toggleSection('parking')" class="w-full bg-surface rounded-xl p-4 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <span class="font-nunito font-bold text-primary" data-content="sections.location.parkingTitle">🚗 Información de Aparcamiento</span>
+                                <svg class="w-5 h-5 text-gray-400 transform transition-transform" id="parking-icon">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="parking-content" class="hidden bg-white rounded-xl p-4 shadow-card">
+                            <p class="text-text-secondary" data-content="locationDetails.parking.description">Aparcamiento gratuito disponible en la calle. También hay un parking público a 2 minutos andando (Parking Plaza Mayor).</p>
+                        </div>
+                        
+                        <button onclick="toggleSection('weather')" class="w-full bg-surface rounded-xl p-4 text-left hover:bg-gray-100 transition-colors">
+                            <div class="flex items-center justify-between">
+                                <span class="font-nunito font-bold text-primary" data-content="sections.location.weatherTitle">🌤️ Previsión del Tiempo</span>
+                                <svg class="w-5 h-5 text-gray-400 transform transition-transform" id="weather-icon">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="weather-content" class="hidden bg-white rounded-xl p-4 shadow-card">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-4xl" data-content="locationDetails.weather.emoji">☀️</div>
+                                <div>
+                                    <p class="font-medium text-text-primary" data-content="locationDetails.weather.status">Soleado, 24°C</p>
+                                    <p class="text-text-secondary text-sm" data-content="locationDetails.weather.description">Perfecto para actividades al aire libre</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Registry -->
+    <section id="gifts" class="py-16 px-4 bg-gradient-to-r from-accent-50 to-primary-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-dancing text-4xl md:text-5xl text-center text-primary mb-12" data-content="sections.gifts.title">Ideas de Regalos 🎁</h2>
+            
+            <div id="gifts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Gift items will be dynamically inserted here -->
+            </div>
+            
+            <div class="text-center">
+                <p class="text-text-secondary mb-4" data-content="sections.gifts.subtitle">¿No sabes qué regalar? ¡No te preocupes!</p>
+                <button class="bg-secondary text-white px-8 py-3 rounded-lg font-nunito font-bold hover:bg-secondary-600 transition-colors" data-content="buttons.fullGiftList">
+                    💝 Ver Lista Completa de Regalos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Form -->
+    <section id="rsvp" class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-dancing text-4xl md:text-5xl text-center text-primary mb-12" data-content="sections.rsvp.title">¡Confirma tu Asistencia! 🎊</h2>
+            
+            <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 shadow-modal">
+                <!-- Step 1: Guest Count -->
+                <div id="step-1" class="step-content">
+                    <h3 class="font-nunito font-bold text-2xl text-center text-text-primary mb-8" data-content="sections.rsvp.step1.title">¿Cuántos venís a la fiesta?</h3>
+                    
+                    <div class="max-w-md mx-auto">
+                        <div class="mb-6">
+                            <label class="block text-text-primary font-medium mb-2" data-content="sections.rsvp.step1.guestLabel">Número de invitados</label>
+                            <div class="flex items-center space-x-4">
+                                <button onclick="decreaseGuests()" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                                    </svg>
+                                </button>
+                                <div class="flex-1 text-center">
+                                    <div id="guest-count" class="text-4xl font-nunito font-bold text-primary">2</div>
+                                    <div class="text-text-secondary" data-content="sections.rsvp.step1.personLabel">personas</div>
+                                </div>
+                                <button onclick="increaseGuests()" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button onclick="nextStep()" class="w-full btn-primary text-lg" data-content="sections.rsvp.step1.continueButton">
+                            Continuar ➡️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Contact Info & Dietary Restrictions -->
+                <div id="step-2" class="step-content hidden">
+                    <h3 class="font-nunito font-bold text-2xl text-center text-text-primary mb-8" data-content="sections.rsvp.step2.title">Información de Contacto</h3>
+                    
+                    <div class="max-w-md mx-auto space-y-6">
+                        <div>
+                            <label class="block text-text-primary font-medium mb-2" data-content="sections.rsvp.step2.fields.parentName">Nombre del padre/madre</label>
+                            <input type="text" id="parent-name" class="form-input" data-placeholder="sections.rsvp.step2.placeholders.parentName" placeholder="Tu nombre completo" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-text-primary font-medium mb-2" data-content="sections.rsvp.step2.fields.phone">Teléfono</label>
+                            <input type="tel" id="phone" class="form-input" data-placeholder="sections.rsvp.step2.placeholders.phone" placeholder="+34 600 000 000" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-text-primary font-medium mb-2" data-content="sections.rsvp.step2.fields.email">Email</label>
+                            <input type="email" id="email" class="form-input" data-placeholder="sections.rsvp.step2.placeholders.email" placeholder="tu@email.com" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-text-primary font-medium mb-2" data-content="sections.rsvp.step2.fields.dietary">¿Alguna alergia o restricción alimentaria?</label>
+                            <div class="grid grid-cols-2 gap-3 mb-4">
+                                <button onclick="toggleDietary('vegetarian')" class="dietary-option p-3 border-2 border-border-light rounded-lg text-center hover:border-primary transition-colors">
+                                    <div class="text-2xl mb-1">🥗</div>
+                                    <div class="text-sm">Vegetariano</div>
+                                </button>
+                                <button onclick="toggleDietary('allergies')" class="dietary-option p-3 border-2 border-border-light rounded-lg text-center hover:border-primary transition-colors">
+                                    <div class="text-2xl mb-1">⚠️</div>
+                                    <div class="text-sm">Alergias</div>
+                                </button>
+                            </div>
+                            <textarea id="dietary-notes" class="form-input" rows="3" data-placeholder="sections.rsvp.step2.placeholders.dietary" placeholder="Especifica alergias o restricciones..."></textarea>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <button onclick="previousStep()" class="flex-1 bg-gray-300 text-gray-700 font-nunito font-bold py-3 px-6 rounded-lg hover:bg-gray-400 transition-colors" data-content="sections.rsvp.step2.backButton">
+                                ⬅️ Atrás
+                            </button>
+                            <button onclick="submitRSVP()" class="flex-1 btn-primary" data-content="sections.rsvp.step2.confirmButton">
+                                ✅ Confirmar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <div id="success-message" class="step-content hidden text-center">
+                    <div class="text-6xl mb-6">🎉</div>
+                    <h3 class="font-nunito font-bold text-3xl text-primary mb-4" data-content="sections.rsvp.success.title">¡Confirmado!</h3>
+                    <p class="text-text-secondary text-lg mb-8" data-content="sections.rsvp.success.message">¡Genial! Ya estás en la lista de invitados. Sofia está súper emocionada de verte en su fiesta.</p>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-card mb-8">
+                        <h4 class="font-nunito font-bold text-lg text-primary mb-4" data-content="partyInfo.hashtag">#FiestaSofia2025</h4>
+                        <p class="text-text-secondary mb-4" data-content="sections.rsvp.success.shareTitle">¡Comparte la emoción en redes sociales!</p>
+                        <div class="flex justify-center space-x-4">
+                            <button class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors" data-content="sections.rsvp.success.socialButtons.facebook">
+                                📘 Facebook
+                            </button>
+                            <button class="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors" data-content="sections.rsvp.success.socialButtons.instagram">
+                                📷 Instagram
+                            </button>
+                            <button class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors" data-content="sections.rsvp.success.socialButtons.whatsapp">
+                                💬 WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button onclick="downloadCalendar()" class="bg-secondary text-white px-8 py-3 rounded-lg font-nunito font-bold hover:bg-secondary-600 transition-colors" data-content="buttons.addCalendar">
+                        📅 Añadir al Calendario
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Party Activities Timeline -->
+    <section id="activities" class="py-16 px-4 bg-gradient-to-r from-secondary-50 to-accent-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-dancing text-4xl md:text-5xl text-center text-primary mb-12" data-content="sections.activities.title">Programa de Actividades 🎪</h2>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full hidden md:block"></div>
+                
+                <div id="activities-timeline" class="space-y-8">
+                    <!-- Activities will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Host Testimonials -->
+    <section id="testimonials" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-dancing text-4xl md:text-5xl text-center text-primary mb-12" data-content="sections.testimonials.title">Lo que dicen otros padres 💬</h2>
+            
+            <div id="testimonials-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonials will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Emergency Info -->
+    <section id="contact" class="py-16 px-4 bg-gradient-to-r from-primary-50 to-secondary-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-dancing text-4xl md:text-5xl text-center text-primary mb-12" data-content="sections.contact.title">Información de Contacto 📞</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-card">
+                    <h3 class="font-nunito font-bold text-xl text-primary mb-4" data-content="sections.contact.primaryContact">Contacto Principal</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary" data-content="contacts.primary.name">Carmen (Mamá de Sofia)</p>
+                                <p class="text-text-secondary" data-content="contacts.primary.phone">+34 612 345 678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary">Email</p>
+                                <p class="text-text-secondary" data-content="contacts.primary.email">carmen.sofia@email.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-card">
+                    <h3 class="font-nunito font-bold text-xl text-error mb-4" data-content="sections.contact.emergencyContact">Contacto de Emergencia</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-error rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary" data-content="contacts.emergency.name">Miguel (Papá de Sofia)</p>
+                                <p class="text-text-secondary" data-content="contacts.emergency.phone">+34 687 654 321</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-error-50 rounded-lg p-4">
+                            <p class="text-error text-sm font-medium" data-content="sections.contact.emergencyNote">⚠️ En caso de emergencia médica, llamar directamente al 112</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Instructions -->
+            <div class="mt-8 bg-white rounded-xl p-6 shadow-card">
+                <h3 class="font-nunito font-bold text-xl text-primary mb-4" data-content="sections.contact.importantInstructions">Instrucciones Importantes 📋</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium text-text-primary mb-2" data-content="locationDetails.instructions.arrival.title">🚗 Llegada y Aparcamiento</h4>
+                        <ul class="text-text-secondary text-sm space-y-1" id="arrival-instructions">
+                            <!-- Instructions will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-text-primary mb-2" data-content="locationDetails.instructions.photos.title">📸 Fotos del Día</h4>
+                        <ul class="text-text-secondary text-sm space-y-1" id="photo-instructions">
+                            <!-- Instructions will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky CTA Bar -->
+    <div id="sticky-cta" class="sticky-cta bg-primary text-white p-4 shadow-modal">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <div>
+                <p class="font-nunito font-bold" data-content="sections.stickyCTA.title">¡No te pierdas la fiesta de Sofia! 🎉</p>
+                <p class="text-sm opacity-90" data-content="sections.stickyCTA.subtitle">Confirma tu asistencia ahora</p>
+            </div>
+            <button onclick="scrollToRSVP()" class="bg-white text-primary px-6 py-2 rounded-lg font-nunito font-bold hover:bg-gray-100 transition-colors" data-content="sections.stickyCTA.button">
+                Confirmar
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-6">
+                <h3 class="font-dancing text-3xl text-primary mb-2" data-content="sections.footer.title">¡Gracias por celebrar con nosotros! 💕</h3>
+                <p class="text-gray-300" data-content="sections.footer.subtitle">Sofia y toda la familia estamos emocionados de verte</p>
+            </div>
+            
+            <div class="border-t border-gray-600 pt-6">
+                <p class="text-gray-400 text-sm" data-content="sections.footer.copyright">© 2025 Fiesta de Sofia. Hecho con ❤️ para una celebración especial.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables for data
+        let partyContent = {};
+        let galleryImages = {};
+        let activitiesSchedule = {};
+        let currentPhoto = 0;
+        let guestCount = 2;
+        let currentStep = 1;
+
+        // Load JSON data and initialize page
+        async function loadPageData() {
+            try {
+                // Load all JSON files
+                const [partyResponse, galleryResponse, activitiesResponse] = await Promise.all([
+                    fetch('../data/party-content.json'),
+                    fetch('../data/gallery-images.json'),
+                    fetch('../data/activities-schedule.json')
+                ]);
+
+                partyContent = await partyResponse.json();
+                galleryImages = await galleryResponse.json();
+                activitiesSchedule = await activitiesResponse.json();
+
+                // Initialize page content
+                updateTextContent();
+                createFloatingBalloons();
+                createGallery();
+                createGifts();
+                createActivitiesTimeline();
+                createTestimonials();
+                createInstructionLists();
+                updateCountdown();
+
+                console.log('Page data loaded successfully');
+            } catch (error) {
+                console.error('Error loading page data:', error);
+            }
+        }
+
+        // Update text content from JSON
+        function updateTextContent() {
+            const elements = document.querySelectorAll('[data-content]');
+            elements.forEach(element => {
+                const path = element.getAttribute('data-content');
+                const value = getNestedValue(partyContent, path);
+                if (value) {
+                    element.textContent = value;
+                }
+            });
+
+            // Update placeholders
+            const placeholderElements = document.querySelectorAll('[data-placeholder]');
+            placeholderElements.forEach(element => {
+                const path = element.getAttribute('data-placeholder');
+                const value = getNestedValue(partyContent, path);
+                if (value) {
+                    element.setAttribute('placeholder', value);
+                }
+            });
+
+            // Update page title
+            document.title = partyContent.partyInfo.title;
+        }
+
+        // Get nested object value by dot notation path
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, key) => current && current[key], obj);
+        }
+
+        // Create floating balloons
+        function createFloatingBalloons() {
+            const balloonsContainer = document.getElementById('floating-balloons');
+            
+            galleryImages.balloons.forEach((balloon, index) => {
+                const balloonDiv = document.createElement('div');
+                balloonDiv.className = `absolute balloon-float`;
+                
+                const positions = [
+                    'top-10 left-10',
+                    'top-20 right-10',
+                    'bottom-32 left-20'
+                ];
+                
+                const delays = ['0s', '1s', '2s'];
+                
+                balloonDiv.className += ` ${positions[index]}`;
+                balloonDiv.style.animationDelay = delays[index];
+                
+                const img = document.createElement('img');
+                img.src = balloon.src;
+                img.alt = balloon.alt;
+                img.className = index === 0 ? 'w-16 h-24 object-cover rounded-full shadow-lg' :
+                                index === 1 ? 'w-14 h-20 object-cover rounded-full shadow-lg' :
+                                'w-12 h-18 object-cover rounded-full shadow-lg';
+                img.onerror = function() {
+                    this.src = balloon.fallback;
+                    this.onerror = null;
+                };
+                
+                balloonDiv.appendChild(img);
+                balloonsContainer.appendChild(balloonDiv);
+            });
+        }
+
+        // Create gallery
+        function createGallery() {
+            const galleryContainer = document.getElementById('gallery-container');
+            const galleryDots = document.getElementById('gallery-dots');
+            
+            galleryImages.gallery.forEach((image, index) => {
+                // Create gallery slide
+                const slideDiv = document.createElement('div');
+                slideDiv.className = 'w-full flex-shrink-0 relative';
+                
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.alt;
+                img.className = 'w-full h-96 object-cover';
+                img.onerror = function() {
+                    this.src = image.fallback;
+                    this.onerror = null;
+                };
+                
+                const caption = document.createElement('div');
+                caption.className = 'absolute bottom-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg';
+                caption.textContent = image.caption;
+                
+                const likeButton = document.createElement('button');
+                likeButton.onclick = () => likePhoto(index);
+                likeButton.className = 'absolute top-4 right-4 w-12 h-12 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition-colors';
+                likeButton.innerHTML = `
+                    <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                    </svg>
+                `;
+                
+                slideDiv.appendChild(img);
+                slideDiv.appendChild(caption);
+                slideDiv.appendChild(likeButton);
+                galleryContainer.appendChild(slideDiv);
+                
+                // Create gallery dot
+                const dot = document.createElement('button');
+                dot.onclick = () => goToPhoto(index);
+                dot.className = `w-3 h-3 bg-white rounded-full transition-opacity gallery-dot ${index === 0 ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`;
+                galleryDots.appendChild(dot);
+            });
+        }
+
+        // Create gifts section
+        function createGifts() {
+            const giftsContainer = document.getElementById('gifts-container');
+            
+            galleryImages.gifts.forEach(gift => {
+                const giftDiv = document.createElement('div');
+                giftDiv.className = 'bg-white rounded-xl p-6 shadow-card hover:shadow-lg transition-shadow';
+                
+                giftDiv.innerHTML = `
+                    <img src="${gift.src}" alt="${gift.alt}" class="w-full h-48 object-cover rounded-lg mb-4" 
+                         onerror="this.src='${gift.fallback}'; this.onerror=null;" />
+                    <h3 class="font-nunito font-bold text-lg text-text-primary mb-2">${gift.title}</h3>
+                    <p class="text-text-secondary text-sm mb-4">${gift.description}</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-primary">${gift.price}</span>
+                        <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary-600 transition-colors">
+                            Comprar Regalo
+                        </button>
+                    </div>
+                `;
+                
+                giftsContainer.appendChild(giftDiv);
+            });
+        }
+
+        // Create activities timeline
+        function createActivitiesTimeline() {
+            const timelineContainer = document.getElementById('activities-timeline');
+            
+            activitiesSchedule.activities.forEach((activity, index) => {
+                const activityDiv = document.createElement('div');
+                activityDiv.className = 'flex flex-col md:flex-row items-center';
+                
+                const isLeft = activity.side === 'left';
+                
+                activityDiv.innerHTML = `
+                    <div class="${isLeft ? 'md:w-1/2 md:pr-8 mb-4 md:mb-0' : 'md:w-1/2 md:pr-8'}${!isLeft ? ' order-2 md:order-1' : ''}">
+                        ${isLeft ? `
+                            <div class="bg-white rounded-xl p-6 shadow-card">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-${activity.color} rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                        ${activity.time}
+                                    </div>
+                                    <h3 class="font-nunito font-bold text-lg text-text-primary">${activity.title}</h3>
+                                </div>
+                                <p class="text-text-secondary">${activity.description}</p>
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="hidden md:block w-4 h-4 bg-${activity.color} rounded-full relative z-10"></div>
+                    <div class="${isLeft ? 'md:w-1/2 md:pl-8' : 'md:w-1/2 md:pl-8 mb-4 md:mb-0'}${!isLeft ? ' order-3 md:order-3' : ''}">
+                        ${!isLeft ? `
+                            <div class="bg-white rounded-xl p-6 shadow-card">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-${activity.color} rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                        ${activity.time}
+                                    </div>
+                                    <h3 class="font-nunito font-bold text-lg text-text-primary">${activity.title}</h3>
+                                </div>
+                                <p class="text-text-secondary">${activity.description}</p>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+                
+                timelineContainer.appendChild(activityDiv);
+            });
+        }
+
+        // Create testimonials
+        function createTestimonials() {
+            const testimonialsContainer = document.getElementById('testimonials-container');
+            const gradients = [
+                'from-primary-50 to-secondary-50',
+                'from-secondary-50 to-accent-50', 
+                'from-accent-50 to-primary-50'
+            ];
+            
+            galleryImages.testimonials.forEach((testimonial, index) => {
+                const testimonialDiv = document.createElement('div');
+                testimonialDiv.className = `bg-gradient-to-br ${gradients[index]} rounded-xl p-6 shadow-card`;
+                
+                testimonialDiv.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <img src="${testimonial.avatar}" alt="${testimonial.name}" 
+                             class="w-12 h-12 rounded-full object-cover mr-4" 
+                             onerror="this.src='${testimonial.fallback}'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-nunito font-bold text-text-primary">${testimonial.name}</h4>
+                            <div class="flex text-yellow-400">
+                                <span>${testimonial.rating}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary">${testimonial.comment}</p>
+                `;
+                
+                testimonialsContainer.appendChild(testimonialDiv);
+            });
+        }
+
+        // Create instruction lists
+        function createInstructionLists() {
+            // Arrival instructions
+            const arrivalList = document.getElementById('arrival-instructions');
+            partyContent.locationDetails.instructions.arrival.items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                arrivalList.appendChild(li);
+            });
+
+            // Photo instructions
+            const photoList = document.getElementById('photo-instructions');
+            partyContent.locationDetails.instructions.photos.items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                photoList.appendChild(li);
+            });
+
+            // Activity list for party details
+            const activityList = document.getElementById('activity-list');
+            partyContent.partyDetails.activities.list.forEach(activity => {
+                const li = document.createElement('li');
+                li.textContent = activity;
+                activityList.appendChild(li);
+            });
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const partyDate = new Date(partyContent.partyInfo.partyDate);
+            const now = new Date();
+            const difference = partyDate - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Gallery Navigation
+        function nextPhoto() {
+            currentPhoto = (currentPhoto + 1) % galleryImages.gallery.length;
+            updateGallery();
+        }
+
+        function previousPhoto() {
+            currentPhoto = (currentPhoto - 1 + galleryImages.gallery.length) % galleryImages.gallery.length;
+            updateGallery();
+        }
+
+        function goToPhoto(index) {
+            currentPhoto = index;
+            updateGallery();
+        }
+
+        function updateGallery() {
+            const container = document.getElementById('gallery-container');
+            container.style.transform = `translateX(-${currentPhoto * 100}%)`;
+            
+            // Update dots
+            document.querySelectorAll('.gallery-dot').forEach((dot, index) => {
+                dot.classList.toggle('opacity-100', index === currentPhoto);
+                dot.classList.toggle('opacity-50', index !== currentPhoto);
+            });
+        }
+
+        function likePhoto(index) {
+            console.log(`Liked photo ${index}`);
+        }
+
+        // RSVP Form Functions
+        function increaseGuests() {
+            if (guestCount < 10) {
+                guestCount++;
+                document.getElementById('guest-count').textContent = guestCount;
+            }
+        }
+
+        function decreaseGuests() {
+            if (guestCount > 1) {
+                guestCount--;
+                document.getElementById('guest-count').textContent = guestCount;
+            }
+        }
+
+        function nextStep() {
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+            currentStep = 2;
+        }
+
+        function previousStep() {
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-1').classList.remove('hidden');
+            currentStep = 1;
+        }
+
+        function toggleDietary(type) {
+            const button = event.target.closest('.dietary-option');
+            button.classList.toggle('border-primary');
+            button.classList.toggle('bg-primary-50');
+        }
+
+        function submitRSVP() {
+            const name = document.getElementById('parent-name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            
+            if (!name || !phone || !email) {
+                alert('Por favor, completa todos los campos obligatorios');
+                return;
+            }
+            
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('success-message').classList.remove('hidden');
+            
+            const currentCount = parseInt(document.getElementById('confirmed-count').textContent);
+            document.getElementById('confirmed-count').textContent = currentCount + guestCount;
+        }
+
+        function downloadCalendar() {
+            const event = {
+                title: partyContent.partyInfo.title,
+                start: partyContent.partyInfo.partyDate,
+                end: partyContent.partyInfo.partyDate.replace('15:00:00', '18:00:00'),
+                location: `${partyContent.partyInfo.location.name}, ${partyContent.partyInfo.location.fullAddress}`
+            };
+            
+            console.log('Downloading calendar event:', event);
+            alert('¡Evento añadido al calendario!');
+        }
+
+        // Utility Functions
+        function scrollToRSVP() {
+            document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleDetails() {
+            const details = document.getElementById('party-details');
+            details.classList.toggle('hidden');
+        }
+
+        function toggleSection(sectionId) {
+            const content = document.getElementById(`${sectionId}-content`);
+            const icon = document.getElementById(`${sectionId}-icon`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Sticky CTA
+        function handleScroll() {
+            const stickyCTA = document.getElementById('sticky-cta');
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            if (scrollPosition > windowHeight * 0.5 && scrollPosition < documentHeight - windowHeight - 200) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+        }
+
+        // Event Listeners and Initialization
+        window.addEventListener('scroll', handleScroll);
+        
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPageData();
+            setInterval(updateCountdown, 1000);
+            setInterval(nextPhoto, 5000); // Auto-advance gallery
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

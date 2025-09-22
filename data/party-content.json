@@ -1,0 +1,169 @@
+{
+    "partyInfo": {
+        "childName": "Sofia",
+        "age": 7,
+        "title": "\u00a1Sofia cumple 7 a\u00f1os! \ud83c\udf82",
+        "date": "S\u00e1bado, 28 Septiembre 2025",
+        "time": "15:00 - 18:00",
+        "location": {
+            "name": "Parque Central",
+            "address": "Calle Mayor 123, Madrid",
+            "fullAddress": "Calle Mayor 123, 28013 Madrid"
+        },
+        "theme": "Princesas y Unicornios - \u00a1Ven disfrazado!",
+        "partyDate": "2025-09-28T15:00:00",
+        "hashtag": "#FiestaSofia2025"
+    },
+    "buttons": {
+        "confirmAttendance": "\ud83c\udf89 Confirmar Asistencia",
+        "viewDetails": "\ud83d\udccb Ver Detalles",
+        "openMaps": "\ud83d\uddfa\ufe0f Abrir en Google Maps",
+        "fullGiftList": "\ud83d\udc9d Ver Lista Completa de Regalos",
+        "addCalendar": "\ud83d\udcc5 A\u00f1adir al Calendario"
+    },
+    "sections": {
+        "countdown": {
+            "title": "\u00a1Faltan solo...",
+            "subtitle": "\u00a1Hasta la fiesta m\u00e1s divertida del a\u00f1o! \ud83c\udf8a",
+            "labels": {
+                "days": "D\u00edas",
+                "hours": "Horas",
+                "minutes": "Minutos",
+                "seconds": "Segundos"
+            }
+        },
+        "gallery": {
+            "title": "Galer\u00eda de Sofia \ud83d\udcf8"
+        },
+        "socialProof": {
+            "title": "\u00a1Mira qui\u00e9n viene! \ud83d\udc65",
+            "confirmedText": "amigos",
+            "subtitle": "ya confirmaron",
+            "callToAction": "\u00a1No te quedes fuera de la diversi\u00f3n!"
+        },
+        "location": {
+            "title": "\u00bfD\u00f3nde es la fiesta? \ud83d\udccd",
+            "mapLabel": "Mapa Interactivo",
+            "addressTitle": "\ud83d\udccd Direcci\u00f3n Completa",
+            "parkingTitle": "\ud83d\ude97 Informaci\u00f3n de Aparcamiento",
+            "weatherTitle": "\ud83c\udf24\ufe0f Previsi\u00f3n del Tiempo"
+        },
+        "gifts": {
+            "title": "Ideas de Regalos \ud83c\udf81",
+            "subtitle": "\u00bfNo sabes qu\u00e9 regalar? \u00a1No te preocupes!"
+        },
+        "rsvp": {
+            "title": "\u00a1Confirma tu Asistencia! \ud83c\udf8a",
+            "step1": {
+                "title": "\u00bfCu\u00e1ntos ven\u00eds a la fiesta?",
+                "guestLabel": "N\u00famero de invitados",
+                "personLabel": "personas",
+                "continueButton": "Continuar \u27a1\ufe0f"
+            },
+            "step2": {
+                "title": "Informaci\u00f3n de Contacto",
+                "fields": {
+                    "parentName": "Nombre del padre/madre",
+                    "phone": "Tel\u00e9fono",
+                    "email": "Email",
+                    "dietary": "\u00bfAlguna alergia o restricci\u00f3n alimentaria?"
+                },
+                "placeholders": {
+                    "parentName": "Tu nombre completo",
+                    "phone": "+34 600 000 000",
+                    "email": "tu@email.com",
+                    "dietary": "Especifica alergias o restricciones..."
+                },
+                "backButton": "\u2b05\ufe0f Atr\u00e1s",
+                "confirmButton": "\u2705 Confirmar"
+            },
+            "success": {
+                "title": "\u00a1Confirmado!",
+                "message": "\u00a1Genial! Ya est\u00e1s en la lista de invitados. Sofia est\u00e1 s\u00faper emocionada de verte en su fiesta.",
+                "shareTitle": "\u00a1Comparte la emoci\u00f3n en redes sociales!",
+                "socialButtons": {
+                    "facebook": "\ud83d\udcd8 Facebook",
+                    "instagram": "\ud83d\udcf7 Instagram",
+                    "whatsapp": "\ud83d\udcac WhatsApp"
+                }
+            }
+        },
+        "activities": {
+            "title": "Programa de Actividades \ud83c\udfaa"
+        },
+        "testimonials": {
+            "title": "Lo que dicen otros padres \ud83d\udcac"
+        },
+        "contact": {
+            "title": "Informaci\u00f3n de Contacto \ud83d\udcde",
+            "primaryContact": "Contacto Principal",
+            "emergencyContact": "Contacto de Emergencia",
+            "emergencyNote": "\u26a0\ufe0f En caso de emergencia m\u00e9dica, llamar directamente al 112",
+            "importantInstructions": "Instrucciones Importantes \ud83d\udccb"
+        },
+        "stickyCTA": {
+            "title": "\u00a1No te pierdas la fiesta de Sofia! \ud83c\udf89",
+            "subtitle": "Confirma tu asistencia ahora",
+            "button": "Confirmar"
+        },
+        "footer": {
+            "title": "\u00a1Gracias por celebrar con nosotros! \ud83d\udc95",
+            "subtitle": "Sofia y toda la familia estamos emocionados de verte",
+            "copyright": "\u00a9 2025 Fiesta de Sofia. Hecho con \u2764\ufe0f para una celebraci\u00f3n especial."
+        }
+    },
+    "partyDetails": {
+        "food": {
+            "title": "\ud83c\udf70 Comida y Bebidas",
+            "description": "Tarta de cumplea\u00f1os, bocadillos, zumos naturales y snacks saludables"
+        },
+        "activities": {
+            "title": "\ud83c\udfae Actividades",
+            "list": [
+                "\u2022 Pintacaras profesional",
+                "\u2022 Juegos tradicionales",
+                "\u2022 Baile y m\u00fasica",
+                "\u2022 Pi\u00f1ata sorpresa"
+            ]
+        }
+    },
+    "locationDetails": {
+        "parking": {
+            "description": "Aparcamiento gratuito disponible en la calle. Tambi\u00e9n hay un parking p\u00fablico a 2 minutos andando (Parking Plaza Mayor)."
+        },
+        "weather": {
+            "status": "Soleado, 24\u00b0C",
+            "description": "Perfecto para actividades al aire libre",
+            "emoji": "\u2600\ufe0f"
+        },
+        "instructions": {
+            "arrival": {
+                "title": "\ud83d\ude97 Llegada y Aparcamiento",
+                "items": [
+                    "\u2022 Llegar 10 minutos antes de las 15:00",
+                    "\u2022 Aparcamiento gratuito en la calle",
+                    "\u2022 Entrada por la puerta principal del parque"
+                ]
+            },
+            "photos": {
+                "title": "\ud83d\udcf8 Fotos del D\u00eda",
+                "items": [
+                    "\u2022 Usa el hashtag #FiestaSofia2025",
+                    "\u2022 Comparte en nuestro grupo de WhatsApp",
+                    "\u2022 \u00c1lbum compartido disponible despu\u00e9s"
+                ]
+            }
+        }
+    },
+    "contacts": {
+        "primary": {
+            "name": "Carmen (Mam\u00e1 de Sofia)",
+            "phone": "+34 612 345 678",
+            "email": "carmen.sofia@email.com"
+        },
+        "emergency": {
+            "name": "Miguel (Pap\u00e1 de Sofia)",
+            "phone": "+34 687 654 321"
+        }
+    }
+}

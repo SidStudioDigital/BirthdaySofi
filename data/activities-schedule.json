@@ -1,0 +1,39 @@
+{
+    "activities": [
+        {
+            "time": "15:00",
+            "title": "Llegada y Bienvenida \ud83c\udf88",
+            "description": "Recepci\u00f3n de invitados, entrega de gorros de fiesta y primeras fotos",
+            "color": "primary",
+            "side": "left"
+        },
+        {
+            "time": "15:30",
+            "title": "Pintacaras M\u00e1gico \u2728",
+            "description": "Transformaci\u00f3n en princesas, unicornios y personajes favoritos",
+            "color": "secondary",
+            "side": "right"
+        },
+        {
+            "time": "16:00",
+            "title": "Juegos y Bailes \ud83d\udc83",
+            "description": "Juegos tradicionales, baile de la silla y coreograf\u00edas divertidas",
+            "color": "accent",
+            "side": "left"
+        },
+        {
+            "time": "16:45",
+            "title": "\u00a1Tarta y Cumplea\u00f1os Feliz! \ud83c\udf82",
+            "description": "Momento especial con la tarta, velas y el canto tradicional",
+            "color": "primary",
+            "side": "right"
+        },
+        {
+            "time": "17:30",
+            "title": "Pi\u00f1ata Sorpresa \ud83c\udf6c",
+            "description": "Gran final con pi\u00f1ata llena de dulces y peque\u00f1os regalos",
+            "color": "secondary",
+            "side": "left"
+        }
+    ]
+}

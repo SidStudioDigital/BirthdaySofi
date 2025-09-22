@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #FF6B9D; /* joyful-pink */
+  --color-primary-50: #FFF5F8; /* joyful-pink-50 */
+  --color-primary-100: #FFE4EC; /* joyful-pink-100 */
+  --color-primary-200: #FFCDD9; /* joyful-pink-200 */
+  --color-primary-300: #FFB6C6; /* joyful-pink-300 */
+  --color-primary-400: #FF9FB3; /* joyful-pink-400 */
+  --color-primary-500: #FF6B9D; /* joyful-pink-500 */
+  --color-primary-600: #E55A8A; /* joyful-pink-600 */
+  --color-primary-700: #CC4977; /* joyful-pink-700 */
+  --color-primary-800: #B23864; /* joyful-pink-800 */
+  --color-primary-900: #992751; /* joyful-pink-900 */
+
+  /* Secondary Colors */
+  --color-secondary: #4ECDC4; /* supportive-teal */
+  --color-secondary-50: #F0FDFC; /* supportive-teal-50 */
+  --color-secondary-100: #CCFBF1; /* supportive-teal-100 */
+  --color-secondary-200: #99F6E4; /* supportive-teal-200 */
+  --color-secondary-300: #5EEAD4; /* supportive-teal-300 */
+  --color-secondary-400: #4ECDC4; /* supportive-teal-400 */
+  --color-secondary-500: #14B8A6; /* supportive-teal-500 */
+  --color-secondary-600: #0D9488; /* supportive-teal-600 */
+  --color-secondary-700: #0F766E; /* supportive-teal-700 */
+  --color-secondary-800: #115E59; /* supportive-teal-800 */
+  --color-secondary-900: #134E4A; /* supportive-teal-900 */
+
+  /* Accent Colors */
+  --color-accent: #FFE66D; /* sunshine-yellow */
+  --color-accent-50: #FFFBEB; /* sunshine-yellow-50 */
+  --color-accent-100: #FEF3C7; /* sunshine-yellow-100 */
+  --color-accent-200: #FDE68A; /* sunshine-yellow-200 */
+  --color-accent-300: #FCD34D; /* sunshine-yellow-300 */
+  --color-accent-400: #FBBF24; /* sunshine-yellow-400 */
+  --color-accent-500: #FFE66D; /* sunshine-yellow-500 */
+  --color-accent-600: #D97706; /* sunshine-yellow-600 */
+  --color-accent-700: #B45309; /* sunshine-yellow-700 */
+  --color-accent-800: #92400E; /* sunshine-yellow-800 */
+  --color-accent-900: #78350F; /* sunshine-yellow-900 */
+
+  /* Background Colors */
+  --color-background: #FEFEFE; /* clean-white */
+  --color-surface: #F8F9FA; /* subtle-gray */
+
+  /* Text Colors */
+  --color-text-primary: #2D3748; /* charcoal-gray */
+  --color-text-secondary: #718096; /* medium-gray */
+
+  /* Status Colors */
+  --color-success: #48BB78; /* confirmation-green */
+  --color-success-50: #F0FFF4; /* confirmation-green-50 */
+  --color-success-100: #C6F6D5; /* confirmation-green-100 */
+  --color-success-500: #48BB78; /* confirmation-green-500 */
+  --color-success-600: #38A169; /* confirmation-green-600 */
+  --color-success-700: #2F855A; /* confirmation-green-700 */
+
+  --color-warning: #ED8936; /* warm-orange */
+  --color-warning-50: #FFFAF0; /* warm-orange-50 */
+  --color-warning-100: #FEEBC8; /* warm-orange-100 */
+  --color-warning-500: #ED8936; /* warm-orange-500 */
+  --color-warning-600: #DD6B20; /* warm-orange-600 */
+  --color-warning-700: #C05621; /* warm-orange-700 */
+
+  --color-error: #F56565; /* clear-red */
+  --color-error-50: #FED7D7; /* clear-red-50 */
+  --color-error-100: #FEB2B2; /* clear-red-100 */
+  --color-error-500: #F56565; /* clear-red-500 */
+  --color-error-600: #E53E3E; /* clear-red-600 */
+  --color-error-700: #C53030; /* clear-red-700 */
+
+  /* Border Colors */
+  --color-border-light: #E2E8F0; /* light-border */
+  --color-border-medium: #CBD5E0; /* medium-border */
+
+  /* Shadow Variables */
+  --shadow-cta: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-modal: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Animation Variables */
+  --transition-fast: 250ms ease-out;
+  --transition-medium: 300ms ease-out;
+  --animation-bounce: bounce 300ms ease-out;
+  --animation-float: float 2s ease-in-out infinite;
+}
+
+/* Custom Animations */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Custom Component Classes */
+.btn-primary {
+  @apply bg-primary text-white font-nunito font-bold py-3 px-6 rounded-lg transition-all duration-250 hover:shadow-cta hover:scale-105 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white font-nunito font-bold py-3 px-6 rounded-lg transition-all duration-250 hover:shadow-cta hover:scale-105 active:scale-95;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-card p-6 transition-all duration-250 hover:shadow-lg;
+}
+
+.form-input {
+  @apply w-full px-4 py-3 border-2 border-border-light rounded-lg focus:border-primary focus:outline-none transition-colors duration-250;
+}
+
+.text-gradient-primary {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.floating-animation {
+  animation: var(--animation-float);
+}
+
+.bounce-animation {
+  animation: var(--animation-bounce);
+}
